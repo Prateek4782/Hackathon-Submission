@@ -5,7 +5,7 @@ import { Form } from './Components/Form';
 import { Cards } from './Components/Cards';
 import { Navigation } from './Components/Navigation';
 import { Routes, Route } from 'react-router-dom';
-
+import { Details } from './Components/Details'
 function App() {
   return (
     <div className="App">
@@ -20,6 +20,7 @@ function App() {
           <Navbar />
           <Form />
         </>} />
+          <Route path='/Details/:index' element={<Details/>}/>
       </Routes>
     </div>
   );

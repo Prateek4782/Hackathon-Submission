@@ -1,58 +1,27 @@
-import React from 'react'
-import img1 from '../Assets/Office ipsum.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export const Cards = () => {
+  const formDataList = JSON.parse(localStorage.getItem('formDataList')) || [];
+
   return (
     <>
-    <div className="card-container">
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    <div className='Cards'>
-        <div className="card-flex">
-            
-        <img src={img1} alt="" className='Card-img' />
-        <h2>Office ipsum</h2>
-        </div>
-        <p>Office ipsum you must be muted.</p>
-    </div>
-    </div>
+      <div className="card-container">
+        {formDataList.map((formData, index) => (
+   <Link to={{ pathname: `/Details/${index}`, state: { formData: formData } }} className="Link" key={`card-${index}`}>
+
+
+
+            <div className="Cards">
+              <div className="card-flex">
+                <img src={formData.coverImage} alt="" className="Card-img" />
+                <h2>{formData.title}</h2>
+              </div>
+              <p>{formData.summary}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </>
-  )
-}
+  );
+};
