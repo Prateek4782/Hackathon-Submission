@@ -65,7 +65,7 @@ nav {
   position: absolute;
   width: 1440px;
   height: 433px;
-  left: calc(40% - 1440px / 2);
+  left: calc(45% - 1440px / 2);
   top: -17px;
   z-index: 0;
 
@@ -112,17 +112,31 @@ h5 Link{
   color: black;
 }
 .searchbar {
-  margin-right: 20px;
+  margin-right: 60px;
 }
 .searchbar input {
   margin-right: 20px;
   border-radius: 18px;
   padding: 10px;
   border: 1px solid lightgreen;
+  position: absolute;
+    right: 293px;
+    outline: none;
+    top: 515px;
 
+}
+.option{
+  margin-right: 20px;
+  border-radius: 18px;
+  padding: 10px;
+  border: 1px solid lightgreen;
+  position: absolute;
+  right: 200px;
+  top: 515px;
 }
 
 .Cards {
+  
   display: flex;
  
   flex-wrap: wrap;
@@ -245,6 +259,7 @@ border-radius: 10px;
   margin: 500px auto 0px;
   
 }
+
 
 .date-name-link{
   position: absolute;

@@ -5,14 +5,10 @@ export const Navigation = () => {
     <>
     <div className="bar">
     <div className="text-navigation">
-        <Link to={'/'}><h5 className={'/'? "h5": ""}>All Submissions</h5></Link>
-        <h5>Favourite Submissions</h5>
+        <Link to={'/'}><h5 className='Link'>All Submissions</h5></Link>
+       <Link to={'/Fav'} className='Link'> <h5>Favourite Submissions</h5></Link>
     </div>
-    <div className="searchbar">
-<input type="search" placeholder='Search' />
-<input type="search" placeholder='Sort' />
-
-    </div>
+   
     </div>
     
     </>
