@@ -55,6 +55,7 @@ export const Cards = () => {
                 <h2>{formData.title}</h2>
               </div>
               <p>{formData.summary}</p>
+              <p>{formData.date}</p>
             </div>
           </Link>
         ))}

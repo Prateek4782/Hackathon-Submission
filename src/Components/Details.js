@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 
 export const Details = () => {
@@ -10,7 +10,9 @@ export const Details = () => {
   const formData = location.state ? location.state.formData : formDataList[index];
   const [isFavorited, setIsFavorited] = useState(false);
 
-  navigate(`/Edit/${index}`, { state: { formData: formDataList[index] } });
+  const handleNavigateToEdit = () => {
+    navigate(`/Edit/${index}`, { state: { formData: formDataList[index] } });
+  };
 
   const handleFavorite = () => {
     setIsFavorited(!isFavorited);
@@ -30,28 +32,23 @@ export const Details = () => {
     }
   };
 
-  const openhandle = () => {
-    if (formData && formData.otherLink) {
-      window.open(formData.otherLink, '_blank');
-    }
-  };
-
   return (
     <>
       <div className="banner detail-banner">
         <div className="detail-page-bar">
           <img src={formData.coverImage} alt="" className="detailbar-img" />
           <h1>{formData.title}</h1>
-          <div className={`star-icon-container ${isFavorited ? 'favorited' : ''}`} onClick={handleFavorite}>
+          <div className="star-icon-container" onClick={handleFavorite}>
             {isFavorited ? <AiFillStar /> : <AiOutlineStar />}
           </div>
           <div className="delete-edit-btn">
-            <Link to={{ pathname: `/Edit/${index}`, state: { formData } }} className="bar-btn">Edit</Link>
+            <button className="bar-btn" onClick={handleNavigateToEdit}>Edit</button>
             <button className="bar-btn" onClick={handleDelete}>Delete</button>
           </div>
         </div>
         <div className="p">{formData.summary}</div>
       </div>
+       
 
       <div className="flex">
         <div className="desc-details">
@@ -60,14 +57,12 @@ export const Details = () => {
         </div>
         <div className="date-name-link">
           <h5>{formData.eventType}</h5>
-          <h2>{formData.eventName}</h2>
-          <h6>{formData.eventDate}</h6>
+          <h2 className='link-btn-date'>{formData.eventName}</h2>
+          <h6>{formData.hackathonStartDate}</h6>
           <button className='link-btn'>Github Respository</button>
-          <button className='link-btn-2' onClick={openhandle}>{formData.OtherLink}</button>
+          <button  className='link-btn-2'>Other Link</button>
         </div>
       </div>
     </>
- 
-
   );
 };

@@ -11,7 +11,9 @@ export const Form = () => {
     hackathonEndDate: "",
     githubLink: "",
     otherLinks: "",
+    date: new Date().toISOString().substr(0, 10)
   });
+  
 
  const handleChange = (e) => {
   const { name, value } = e.target;
@@ -30,19 +32,19 @@ export const Form = () => {
   }
 };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formDataList = JSON.parse(localStorage.getItem("formDataList")) || [];
-    formDataList.push(formData);
-    localStorage.setItem("formDataList", JSON.stringify(formDataList));
-  
-    // Display an alert before navigating to the home page
-    window.alert("Thank you for your submission!");
-  
-    // Navigate to the home page
-    window.location.href = "/";
-  };
-  
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const formDataList = JSON.parse(localStorage.getItem("formDataList")) || [];
+  formDataList.push({ ...formData, date: new Date().toISOString().substr(0, 10) });
+  localStorage.setItem("formDataList", JSON.stringify(formDataList));
+
+  // Display an alert before navigating to the home page
+  window.alert("Thank you for your submission!");
+
+  // Navigate to the home page
+  window.location.href = "/";
+};
+
   return (
     <form onSubmit={handleSubmit}>
       <div>

@@ -376,3 +376,16 @@ form{
   top: 262px;
  
 }
+h6{
+  position: absolute;
+  width: 113px;
+  background: transparent;
+  color: white;
+  padding: 13px 23px;
+  border-radius: 12px;
+  display: block;
+  right: 1000px;
+  font-size: 19px;
+    top:50px;
+ 
+}
