@@ -7,7 +7,8 @@ import { Navigation } from './Components/Navigation';
 import { Routes, Route } from 'react-router-dom';
 import { Details } from './Components/Details'
 import { Fav } from './Components/Fav';
-function App() {
+import {Edit} from './Components/Edit'
+ function App() {
   return (
     <div className="App">
       <Navbar />
@@ -28,6 +29,7 @@ function App() {
           <Navigation/>
           <Fav/>
           </>}/>
+          <Route path="/Edit/:index" element={<Edit/>} />
       </Routes>
     </div>
   );
