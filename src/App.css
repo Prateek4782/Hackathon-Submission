@@ -347,6 +347,14 @@ flex-wrap: wrap;
 form{
   width: 80%;
 }
+.detail-banner{
+  width: 100%;
+}
+.delete-edit-btn{
+  position: absolute;
+  right: 290px;
+  top: 300px;
+}
 }
 .flex{
   display: flex;
