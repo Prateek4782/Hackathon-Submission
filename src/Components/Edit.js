@@ -11,7 +11,7 @@ export const Edit = () => {
   const [formValues, setFormValues] = useState({
     title: formData?.title ?? '',
     description: formData?.description ?? '',
-    coverImage: formData?.coverImage ?? '',
+    coverImage: '',
     hackathonName: formData?.hackathonName ?? '',
     startDate: formData?.startDate ?? '',
     endDate: formData?.endDate ?? '',
@@ -34,10 +34,23 @@ export const Edit = () => {
 
   // Handle form input changes
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
+    const { name } = event.target;
+  
+    if (name === 'coverImage') {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setFormValues({ ...formValues, [name]: reader.result });
+        };
+      }
+    } else {
+      const { value } = event.target;
+      setFormValues({ ...formValues, [name]: value });
+    }
   };
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -52,7 +65,7 @@ export const Edit = () => {
       <br />
       <label>
         Cover Image:
-        <input type="file" name="coverImage" value={formValues.coverImage} onChange={handleInputChange} />
+        <input type="file" name="coverImage" onChange={handleInputChange} />
       </label>
       <br />
       <label>
