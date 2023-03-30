@@ -27,7 +27,16 @@ export const Edit = () => {
     const formDataList = JSON.parse(localStorage.getItem('formDataList')) || [];
     formDataList[index] = { ...formDataList[index], ...formValues };
     localStorage.setItem('formDataList', JSON.stringify(formDataList));
-
+    const isConfirmed = window.confirm("Are you sure you want to submit form?");
+    if (!isConfirmed) {
+      return;
+    }
+  
+    formDataList.push({ ...formData, date: new Date().toISOString().substr(0, 10) });
+    localStorage.setItem("formDataList", JSON.stringify(formDataList));
+  
+    // Display an alert before navigating to the home page
+    window.alert("Update Form Saved!");
     // Navigate back to the details page
     navigate(`/Details/${index}`, { state: { formData: formDataList[index] } });
   };
