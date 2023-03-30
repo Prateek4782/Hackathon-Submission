@@ -64,12 +64,12 @@ export const Edit = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Title:
-        <input type="text" name="title" value={formValues.title} onChange={handleInputChange} />
+        <input type="text" name="title" value={formValues.title} onChange={handleInputChange} placeholder="Title of your submission"/>
       </label>
       <br />
       <label>
         Description:
-        <textarea name="description" value={formValues.description} onChange={handleInputChange} />
+        <textarea name="description" value={formValues.description} onChange={handleInputChange}placeholder="A short summary of your submission (this will be visible with your submission)" />
       </label>
       <br />
       <label>
@@ -79,7 +79,7 @@ export const Edit = () => {
       <br />
       <label>
         Hackathon Name:
-        <input type="text" name="hackathonName" value={formValues.hackathonName} onChange={handleInputChange} placeholder="Enter hackathon name" />
+        <input type="text" name="hackathonName" value={formValues.hackathonName} onChange={handleInputChange}     placeholder="Enter the name of the hackathon"/>
       </label>
       <br />
       <label>

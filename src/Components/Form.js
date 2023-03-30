@@ -87,6 +87,7 @@ const handleSubmit = (e) => {
           name="title"
           value={formData.title}
           onChange={handleChange}
+          placeholder="Title of your submission"
         />
       </div>
       <div>
@@ -96,6 +97,7 @@ const handleSubmit = (e) => {
           name="summary"
           value={formData.summary}
           onChange={handleChange}
+          placeholder="A short summary of your submission (this will be visible with your submission)"
         />
       </div>
       <div>
@@ -105,6 +107,7 @@ const handleSubmit = (e) => {
           name="description"
           value={formData.description}
           onChange={handleChange}
+          placeholder="Write a long description of your project. You can describe your idea and approach here."
         />
       </div>
       <div>
@@ -125,6 +128,7 @@ const handleSubmit = (e) => {
           name="hackathonName"
           value={formData.hackathonName}
           onChange={handleChange}
+          placeholder="Enter the name of the hackathon"
         />
       </div>
       <div>
@@ -155,6 +159,7 @@ const handleSubmit = (e) => {
        name="githubLink"
        value={formData.githubLink}
        onChange={handleChange}
+       placeholder="Enter your submission’s public GitHub repository link"
      />
 </div>
 <div>
@@ -165,6 +170,7 @@ const handleSubmit = (e) => {
        name="otherLinks"
        value={formData.otherLinks}
        onChange={handleChange}
+       placeholder="You can upload a video demo or URL of you demo app here."
      />
 </div>
 <button type="submit">Submit</button>
