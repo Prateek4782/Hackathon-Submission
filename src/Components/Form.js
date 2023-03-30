@@ -35,6 +35,37 @@ export const Form = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
   const formDataList = JSON.parse(localStorage.getItem("formDataList")) || [];
+
+  // Validate form input
+  const errors = {};
+  if (!formData.title) {
+    errors.title = "Title is required";
+  }
+  if (!formData.summary) {
+    errors.summary = "Summary is required";
+  }
+  if (!formData.description) {
+    errors.description = "Description is required";
+  }
+  if (!formData.coverImage) {
+    errors.coverImage = "Cover image is required";
+  }
+  if (!formData.hackathonName) {
+    errors.hackathonName = "Hackathon name is required";
+  }
+
+  // If there are validation errors, display them and prevent submission
+  if (Object.keys(errors).length > 0) {
+    window.alert(Object.values(errors).join("\n"));
+    return;
+  }
+
+  // Display a confirmation dialog before submitting the form
+  const isConfirmed = window.confirm("Are you sure you want to submit the form?");
+  if (!isConfirmed) {
+    return;
+  }
+
   formDataList.push({ ...formData, date: new Date().toISOString().substr(0, 10) });
   localStorage.setItem("formDataList", JSON.stringify(formDataList));
 
