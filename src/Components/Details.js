@@ -1,6 +1,10 @@
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { MdModeEdit, MdDelete } from "react-icons/md";
+import { BsCalendar } from "react-icons/bs";
+import { RxDividerVertical } from "react-icons/rx";
 import React, { useState } from "react";
+
 export const Details = () => {
   const { index } = useParams();
   const location = useLocation();
@@ -43,6 +47,12 @@ export const Details = () => {
     }
   };
 
+  const hackathonStartDate = new Date(formData.hackathonStartDate);
+  const formattedStartDate =
+    hackathonStartDate.getDate() +
+    " " +
+    hackathonStartDate.toLocaleString("default", { month: "long" });
+
   return (
     <>
       <div className="banner detail-banner">
@@ -51,21 +61,25 @@ export const Details = () => {
           <h1>{formData.title}</h1>
           <div className="delete-edit-btn">
             <button className="bar-btn" onClick={handleNavigateToEdit}>
-              Edit
+              <MdModeEdit /> Edit
             </button>
-            <button className="bar-btn" onClick={handleDelete}>
-              Delete
+            <button className="bar-btn " onClick={handleDelete}>
+              <MdDelete /> Delete
             </button>
           </div>
         </div>
         <div className="p">{formData.summary}</div>
-        <div className="star-date-flex">
-          <div className="star-icon-container" onClick={handleFavorite}>
-            {isFavorited ? <AiFillStar /> : <AiOutlineStar />}
-            <h6>{formData.hackathonStartDate}</h6>
-          </div>
+
+        <div className="star-icon-container " onClick={handleFavorite}>
+          {isFavorited ? <AiFillStar /> : <AiOutlineStar />}{" "}
+          <RxDividerVertical/>
+          <h6 className="detail-bar-date">
+            <BsCalendar />
+            {formattedStartDate}
+          </h6>
         </div>
       </div>
+
       <div className="flex">
         <div className="desc-details">
           <h3>Description</h3>

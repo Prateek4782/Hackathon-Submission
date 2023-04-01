@@ -265,11 +265,11 @@ border-radius: 10px;
   align-items: center;
  /* margin: 125px; */
  margin: 130px;
-  width: 1022px;
+  width: 1145px;
   justify-content: space-between;
 }
 .detail-page-bar h1{
-  margin-right: 370px;
+  margin-right: 500px;
 
 }
 .detail-banner{
@@ -278,7 +278,10 @@ border-radius: 10px;
   
 }
 .bar-btn{
-  display: block;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
   text-decoration: none;
   border-radius: 8px;
@@ -289,11 +292,15 @@ border-radius: 10px;
  width: 130px;
  border: 1px solid white;
 }
+.bar-btn svg{
+font-size: 22px;
+margin-right: 6px;
+}
 .p{
   position: absolute
   ;
-  bottom: 100px;
-  left: 295px;
+  bottom: 114px;
+  left: 134px;
 }
 .desc-details{
   width: 900px;
@@ -313,8 +320,35 @@ border-radius: 10px;
   text-decoration: none;
   color: black;
 }
-.star-date-flex{
+
+.detail-bar-date{
+  background: #ffffff3d;
+  border-radius: 17px;
   display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  margin-left: 10px;
+  padding: 5px 10px 5px 5px;
+  
+}
+.detail-bar-date svg {
+  margin-right: 6px;
+}
+
+
+.star-icon-container{
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 23px;
+  left: 120px;
+  font-size: 22px;
+
+}
+.star-icon-container svg{
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 415px){
@@ -413,16 +447,3 @@ form{
   top: 262px;
  
 }
-/* h6{
-  position: absolute;
-  width: 113px;
-  background: transparent;
-  color: white;
-  padding: 13px 23px;
-  border-radius: 12px;
-  display: block;
-  right: 1000px;
-  font-size: 19px;
-    top:50px;
- 
-} */
