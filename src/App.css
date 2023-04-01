@@ -5,16 +5,16 @@
 }
 nav {
   position: absolute;
-  width: 98%;
+  width: 50%;
   height: 64px;
-  left: 16px;
+  left: 130px;
   top: 16px;
 
   background: #ffffff;
 }
 .text-banner {
   position: absolute;
-  left: 50px;
+  left: 135px;
   top: 50px;
 }
 .banner {
@@ -85,9 +85,10 @@ nav {
   border: none;
   cursor: pointer;
   z-index: 1;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25)
 }
 .text-banner .banner-button:hover {
-  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25) !important;
   cursor: pointer !important;
 }
 
@@ -193,7 +194,7 @@ height: 220px;
   text-transform: capitalize;
 }
 .card-date{
-  margin: 80px 0 10px 35px;
+  margin: 105px 0 10px 35px;
 }
 form {
   display: flex;
@@ -252,35 +253,40 @@ form button:hover {
   text-decoration: none;
   color: black;
 }
+/* -----detail */
 .detailbar-img{
-  width: 120px;
-  height: 120px;
-object-fit: cover;  
+  width: 132px;
+  height: 130px;
+object-fit:cover ; 
 border-radius: 10px;
 }
 .detail-page-bar{
   display: flex;
   align-items: center;
-
-  margin: 115px auto;
-  width: 836px;
+ /* margin: 125px; */
+ margin: 130px;
+  width: 1022px;
   justify-content: space-between;
 }
 .detail-page-bar h1{
-  margin-right: 230px;
+  margin-right: 370px;
+
 }
 .detail-banner{
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   
 }
 .bar-btn{
+  display: block;
+  margin-bottom: 10px;
   text-decoration: none;
   border-radius: 8px;
-  padding: 6px 12px;
+  padding: 12px 12px;
   margin-left: 10px;
  background: #003145;
  color: #fff;
+ width: 130px;
  border: 1px solid white;
 }
 .p{
@@ -307,7 +313,9 @@ border-radius: 10px;
   text-decoration: none;
   color: black;
 }
-
+.star-date-flex{
+  display: flex;
+}
 
 @media only screen and (max-width: 415px){
   nav {
@@ -374,6 +382,7 @@ form{
   position: absolute;
   right: 290px;
   top: 300px;
+  display: block;
 }
 }
 .flex{
@@ -404,7 +413,7 @@ form{
   top: 262px;
  
 }
-h6{
+/* h6{
   position: absolute;
   width: 113px;
   background: transparent;
@@ -416,4 +425,4 @@ h6{
   font-size: 19px;
     top:50px;
  
-}
+} */
