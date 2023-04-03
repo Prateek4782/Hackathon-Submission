@@ -2,10 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Ubuntu&display=swap');
 
-.App {
 
-
-}
 nav {
   position: absolute;
   width: 50%;
@@ -21,6 +18,7 @@ nav {
   top: 50px;
 }
 .banner {
+  overflow: hidden;
   position: absolute;
   width: 100%;
   height: 416px;
@@ -64,11 +62,13 @@ nav {
   line-height: 26px;
 }
 .waves {
+  
   position: absolute;
   width: 1440px;
-  height: 421px;
-  left: calc(49% - 1440px / 2);
-  top: -7px;
+  height: 433px;
+  left: calc(50% - 1440px/2);
+  top: 133px;
+  
   z-index: 0;
 
   opacity: 0.75;
