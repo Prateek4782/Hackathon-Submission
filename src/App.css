@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Ubuntu&display=swap');
+
 .App {
 
 
@@ -123,29 +125,45 @@ nav {
 
 
 .searchbar {
+
   margin-right: 60px;
 }
+.searchbar svg {
+  z-index: 1;
+  position: absolute;
+  right: 515px;
+  top: 537px;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #666666;
+}
+
 .searchbar input {
+  width: 236px;
+ 
   color: #666666;
   margin-right: 20px;
-  border-radius: 18px;
-  padding: 10px;
+  border-radius: 100px;
+padding: 10px 0 10px 40px;
   border: 1px solid #666666;
   position: absolute;
     right: 293px;
     outline: none;
     top: 515px;
   font-size: 13px;
+  font-family: 'Poppins', sans-serif;
 
 }
 .option{
+  width: 140px;
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
   margin-right: 20px;
-  border-radius: 18px;
+  border-radius: 100px;
   padding: 10px ;
   border: 1px solid #666666;
   position: absolute;
-  right: 200px;
+  right: 150px;
   top: 515px;
   color:#666666;
   outline: none;
@@ -154,7 +172,7 @@ nav {
 .Cards {
   
   display: flex;
- 
+ position: relative;
   flex-wrap: wrap;
 height: 220px;
   padding: 20px;
@@ -163,9 +181,10 @@ height: 220px;
   box-shadow: 0px 3px 24px rgba(90, 90, 90, 0.16), inset 0px -3px 6px rgba(0, 0, 0, 0.06);
 }
 .Cards p {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-transform: capitalize;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3; /* number of lines to show */
@@ -187,7 +206,7 @@ height: 220px;
   gap: 20px 50px;
   flex-wrap: wrap;
   width: 1000px;
-  margin:  0 auto;
+  margin:  0 auto 100px;
   position: relative;
 }
 .card-flex{
@@ -200,14 +219,26 @@ height: 220px;
   font-family: 'Poppins', sans-serif;
 }
 .card-date{
-  margin: 105px 0 10px 35px;
+  /* margin: 105px 0 10px 35px; */
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+font-weight: 400;
+font-size: 14px;
+color: #666666;
+position: absolute;
+bottom: 0;
+right: 20px;
 }
 form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   margin: 100px auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
   background: white;
   padding: 0 50px;
 }
@@ -223,6 +254,8 @@ form label {
 
 form input,
 form textarea {
+  font-family: 'Inter';
+
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -254,6 +287,7 @@ form button:hover {
   box-sizing: border-box;
   border-style: dashed;
   border-width: 5px;
+  border-radius: 16px;
 }
 .Link{
   text-decoration: none;
