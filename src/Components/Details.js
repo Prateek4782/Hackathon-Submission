@@ -4,6 +4,7 @@ import { MdModeEdit, MdDelete } from "react-icons/md";
 import { BsCalendar } from "react-icons/bs";
 import { RxDividerVertical } from "react-icons/rx";
 import React, { useState } from "react";
+import { Description } from "./Description/Description";
 
 export const Details = () => {
   const { index } = useParams();
@@ -52,7 +53,14 @@ export const Details = () => {
     hackathonStartDate.getDate() +
     " " +
     hackathonStartDate.toLocaleString("default", { month: "long" });
-
+    const hackathonEndDate = new Date(formData.hackathonEndDate);
+    const formattedEndDate =
+      hackathonEndDate.getDate() +
+      " " +
+      hackathonEndDate.toLocaleString("default", { month: "long" }) +
+      " " +
+      hackathonEndDate.getFullYear();
+    
   return (
     <>
       <div className="banner detail-banner">
@@ -79,19 +87,31 @@ export const Details = () => {
           </h6>
         </div>
       </div>
+      <Description
+  description={formData.description}
+  hackathonName={formData.hackathonName}
+  formattedStartDate={formattedStartDate}
+  formattedEndDate={formattedEndDate}
+/>
 
-      <div className="flex">
+
+      {/* <div className="flex">
         <div className="desc-details">
           <h3>Description</h3>
           <p>{formData.description}</p>
         </div>
         <div className="date-name-link">
-          <h5>{formData.eventType}</h5>
+          <h5>{formData.hackathonName}</h5>
+          <h6 >
+            <BsCalendar />
+            {formattedStartDate}
+        
+          </h6>
           <h2 className="link-btn-date">{formData.eventName}</h2>
           <button className="link-btn">Github Respository</button>
           <button className="link-btn-2">Other Link</button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
