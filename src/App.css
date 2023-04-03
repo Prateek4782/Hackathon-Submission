@@ -123,7 +123,13 @@ nav {
   
 }
 
+.text-navigation .active {
+  color: #333333;
+}
 
+.text-navigation .inactive {
+  color: #666666;
+}
 .searchbar {
 
   margin-right: 60px;
